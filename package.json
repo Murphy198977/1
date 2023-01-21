@@ -1,0 +1,12 @@
+{
+  "name": "feedback-tagging",
+  "version": "1.0.0",
+  "description": "Simple app for tagging feedback ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "proxy": "http://localhost:3000"
+}
