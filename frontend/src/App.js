@@ -21,21 +21,18 @@ function App() {
       const response = await await fetch("/api/feedback");
       const json = await response.json();
       setData(json);
-      console.log(json);
     }
     fetchData();
   }
 
   function submitTags() {
-    // send to server
-    console.log(selected);
     fetch("/api/tag", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: data.id,
+        _id: data._id,
         tags: [...selected],
       }),
     });

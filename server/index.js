@@ -12,17 +12,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
 
 app.get("/api/feedback", (req, res) => {
-  console.log("get feedback");
   feedback = db.getRandomFeedbackForTagging();
-  res.type("json");
-  res.status(200).send(feedback);
+  feedback.then((feedback) => {
+    res.type("json");
+    res.status(200).send(feedback);
+  });
 });
 
 app.post("/api/tag", (req, res) => {
-  db.updateFeedbackWithTags(req.body.id, req.body.tags);
+  db.updateFeedbackWithTags(req.body._id, req.body.tags);
   res.status(200).send("success");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Feedback Tagger listening on port ${port}`);
 });
