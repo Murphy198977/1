@@ -4,6 +4,7 @@ import { Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { Checkbox } from "@nextui-org/react";
 import { useState, useEffect } from "react";
+import { Image } from "@nextui-org/react";
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -40,8 +41,7 @@ function App() {
     getNewFeedback();
   }
 
-  const [selected, setSelected] = useState([
-  ]);
+  const [selected, setSelected] = useState([]);
   const [data, setData] = useState(null);
   useEffect(() => {
     getNewFeedback();
@@ -50,6 +50,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Image
+          style={{ paddingBottom: "6px" }}
+          width={320}
+          height={180}
+          src="/phil.png"
+          alt="Philosopher"
+        />
         <Textarea
           readOnly
           bordered

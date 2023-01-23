@@ -3,6 +3,9 @@
 }
 
 .App-header {
+  /* disable scrollbar */
+  overflow: hidden;
+
   /* background-color: black; */
   min-height: 100vh;
   display: flex;
